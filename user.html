@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background: #0f172a;
+      color: white;
+    }
+
+    /* 🔹 Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #1e293b;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .menu a {
+      display: block;
+      padding: 12px;
+      margin: 10px 0;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      background: #334155;
+    }
+
+    /* 🔹 Main Content */
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    /* Topbar */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .topbar h1 {
+      font-size: 24px;
+    }
+
+    .logout {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+    }
+
+    .logout:hover {
+      background: #ff1e4d;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      animation: fadeIn 1s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 🔹 Sidebar -->
+  <div class="sidebar">
+    <div>
+      <h2>👤 User</h2>
+      <div class="menu">
+        <a href="#">🏠 Dashboard</a>
+        <a href="#">📄 My Data</a>
+        <a href="#">⚙ Settings</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Main -->
+  <div class="main">
+    
+    <!-- Topbar -->
+    <div class="topbar">
+      <h1>Welcome Back User</h1>
+      <button class="logout" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+      <div class="card">
+        <h3>📊 Activity</h3>
+        <p>View your recent activity</p>
+      </div>
+
+      <div class="card">
+        <h3>📁 Data</h3>
+        <p>Access your personal data</p>
+      </div>
+
+      <div class="card">
+        <h3>🔒 Security</h3>
+        <p>Manage your account security</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function logout() {
+      alert("Logging out...");
+       window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
